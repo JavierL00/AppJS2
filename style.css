@@ -1,0 +1,15 @@
+.row .col.m10 {
+    width: 100%;
+}
+
+.main {
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.tmp {
+    text-align: center;
+    color: black;
+    font-size: 15px;
+}
