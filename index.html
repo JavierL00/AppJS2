@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Reto 2</title>
-	<!-- Compiled and minified CSS -->
+	<title>Show Users</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 	<script src="https://kit.fontawesome.com/1019fed7bd.js" crossorigin="anonymous"></script>
-
 	<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 	<div class="row">
 		<div class="col s12 m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
 					<li class="waves-effect waves-light btn-small left" style="display:none" id="left"><span
-							onclick="retrocederUsuario();">Anterior</span></li>
+							onclick="backUser();">Anterior</span></li>
 					<li class="waves-effect waves-light btn-small right" id="right"><span
-							onclick="avanzarUsuario();">Siguiente</span></li>
-					<div class="row" id="usuario"></div>
+							onclick="nextUser();">Siguiente</span></li>
+					<div class="row" id="user"></div>
 				</div>
 				<div class="card-action">
 					<li class="waves-effect waves-light btn-small"><span onclick="mostrarPerfil();">Perfil
@@ -45,11 +40,11 @@
 		</div>
 	</div>
 
-	<div class="row" id="div-perfil" style="display:none">
+	<div class="row" id="div-profile" style="display:none">
 		<div class="col s12 m6">
 			<div class="card blue-grey darken-1">
 				<div class="card-content white-text">
-					<div class="row" id="perfil"></div>
+					<div class="row" id="profile"></div>
 				</div>
 			</div>
 		</div>
@@ -58,15 +53,15 @@
 	<template id="template-table-user">
 		<div class="col s12 m10">
 			<p class="main">ID</p>
-			<p class="one tmp">a</p>
-			<p class="main">NOMBRE</p>
-			<p class="two tmp">a</p>
-			<p class="main">USUARIO</p>
-			<p class="three tmp">a</p>
+			<p class="id"></p>
+			<p class="main">NAME</p>
+			<p class="name"></p>
+			<p class="main">USERNAME</p>
+			<p class="username"></p>
 			<p class="main">EMAIL</p>
-			<p class="four tmp">a</p>
+			<p class="email"></p>
 			<p class="main">WEBSITE</p>
-			<p class="five tmp">a</p>
+			<p class="website"></p>
 		</div>
 	</template>
 
@@ -109,9 +104,6 @@
 			<p class="four tmp">a</p>
 		</div>
 	</template>
-
-
 	<script src="app.js"></script>
 </body>
-
 </html>
