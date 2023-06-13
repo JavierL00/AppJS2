@@ -16,8 +16,8 @@ let n = 0; // Variable para el userId
 let x = 0; // Variable para los posts
 
 document.addEventListener('DOMContentLoaded', () => {
-	obtenerUsuarios()
-	obtenerPosts()
+	obtenerUsuarios().then()
+	obtenerPosts().then()
 })
 
 const obtenerUsuarios = async (n) => {
@@ -47,7 +47,7 @@ const obtenerPosts = async () => {
 		const res = await fetch('https://jsonplaceholder.typicode.com/posts')
 		const data = await res.json()
 		const postsFiltrados = data.filter(posts => posts.userId === n + 1)
-		llenarDatosPosts(data, x)
+		llenarDatosPosts(postsFiltrados, x)
 	} catch (error) {
 		console.log(error)
 	}
@@ -108,7 +108,7 @@ const llenarDatosPerfil = (data, n) => {
 }
 
 function mostrarPerfil() {
-	if (div_perfil.style.display == 'block') {
+	if (div_perfil.style.display === 'block') {
 		div_perfil.style.display = 'none';
 	} else {
 		div_perfil.style.display = 'block';
@@ -117,7 +117,7 @@ function mostrarPerfil() {
 }
 
 function mostrarPosts() {
-	if (div_posts.style.display == 'block') {
+	if (div_posts.style.display === 'block') {
 		div_posts.style.display = 'none';
 	} else {
 		div_posts.style.display = 'block';
@@ -128,10 +128,10 @@ function mostrarPosts() {
 function avanzarUsuario() {
 	n = n + 1
 
-	if (n == 0) {
+	if (n === 0) {
 		arrow_left.style.display = 'none'
 	} else {
-		if (n == 10) {
+		if (n === 10) {
 			arrow_right.style.display = 'none'
 		}
 		arrow_left.style.display = 'block'
@@ -144,7 +144,7 @@ function avanzarUsuario() {
 function retrocederUsuario() {
 	n = n - 1
 
-	if (n == 0) {
+	if (n === 0) {
 		arrow_left.style.display = 'none'
 	} else {
 		if (n < 10) {
@@ -160,10 +160,10 @@ function retrocederUsuario() {
 function avanzarPost() {
 	x = x + 1
 
-	if (x == 0) {
+	if (x === 0) {
 		arrow_left2.style.display = 'none'
 	} else {
-		if (x == 10) {
+		if (x === 10) {
 			arrow_right2.style.display = 'none'
 		}
 		arrow_left2.style.display = 'block'
@@ -176,7 +176,7 @@ function avanzarPost() {
 function retrocederPost() {
 	x = x - 1
 
-	if (x == 0) {
+	if (x === 0) {
 		arrow_left2.style.display = 'none'
 	} else {
 		if (x < 10) {
